@@ -82,3 +82,23 @@ def demo():
 
 if __name__ == "__main__":
     demo()
+
+# ============================================================
+# MVP-Primitive-7 codec wrapper
+# ============================================================
+
+def encode(s: str) -> str:
+    """
+    MVP-safe outbound encoder.
+    For now: passthrough.
+    Later: CME layering / modulo logic.
+    """
+    return s
+
+
+def decode(s: str) -> str:
+    """
+    MVP-safe inbound decoder.
+    Mirrors encode().
+    """
+    return s
