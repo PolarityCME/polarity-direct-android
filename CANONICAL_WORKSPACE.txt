@@ -1,0 +1,3 @@
+CANONICAL ANDROID WORKSPACE
+Continue development here.
+Archive lives in ~/ARCHIVE
