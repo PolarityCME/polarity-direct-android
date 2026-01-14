@@ -6,6 +6,28 @@ import threading
 import time
 import secrets
 import sys
+# --- modulo codec shim (M1) ---
+from cme_demo import encode as modulo_encode
+from cme_demo import decode as modulo_decode
+
+CODEC_PREFIX = "M1:"  # versioned codec marker
+
+def cme_encode(text: str) -> str:
+    try:
+        encoded = modulo_encode(text)
+        return CODEC_PREFIX + encoded
+    except Exception as e:
+        log("CODEC", f"encode fail: {e}")
+        return text  # fail open (important for MVP)
+
+def cme_decode(payload: str) -> str:
+    try:
+        if payload.startswith(CODEC_PREFIX):
+            return modulo_decode(payload[len(CODEC_PREFIX):])
+        return payload  # legacy / passthrough
+    except Exception as e:
+        log("CODEC", f"decode fail: {e}")
+        return payload
 
 HOST = "0.0.0.0"
 PORT = 5555
