@@ -3,6 +3,8 @@
 This repository contains the **Android-side reference implementation** for **Polarity Direct**, demonstrating a working CME-style handshake and bidirectional text exchange.
 
 This is **not a UI app yet**. It is a **protocol-level MVP** designed to prove reliable, structured communication between devices.
+These scripts demonstrate that meaning can be reduced to a geometric structure, projected through modular rings, and reconstructed
+with perfect fidelity across devices.
 
 ---
 
